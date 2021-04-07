@@ -20,8 +20,8 @@
   <Description DefaultValue="[Workbook Add-in description]"/>
 
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+  <IconUrl DefaultValue="https://excelappdemo.azurewebsites.net/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://excelappdemo.azurewebsites.net/assets/icon-80.png"/>
 
   <!--If you plan to submit this add-in to the Office Store, uncomment the SupportUrl element below-->
   <!--<SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />-->
@@ -39,7 +39,7 @@
     <Host Name="Workbook" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:3000/index.html" />
+    <SourceLocation DefaultValue="https://excelappdemo.azurewebsites.net/index.html" />
   </DefaultSettings>
   <!-- End TaskPane Mode integration.  -->
 
@@ -104,9 +104,8 @@
 
                   <!-- This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFunction or ShowTaskpane. -->
                   <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>ButtonId1</TaskpaneId>
-                    <!-- Provide a url resource id for the location that will be displayed on the task pane. -->
-                    <SourceLocation resid="Taskpane.Url" />
+                    <TaskpaneId>btnAddHederFooter</TaskpaneId>
+                      <FunctionName>addHederFooter</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -119,25 +118,24 @@
     <!-- You can use resources across hosts and form factors. -->
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://excelappdemo.azurewebsites.net/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://excelappdemo.azurewebsites.net/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://excelappdemo.azurewebsites.net/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
+        <bt:Url id="Commands.Url" DefaultValue="https://excelappdemo.azurewebsites.net/commands.html" />
       </bt:Urls>
       <!-- ShortStrings max characters==125. -->
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!" />
-        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group" />
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane" />
+        <bt:String id="CommandsGroup.Label" DefaultValue="EY" />
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Header and Footer" />
       </bt:ShortStrings>
       <!-- LongStrings max characters==250. -->
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started." />
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Add Header-Footer" />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
